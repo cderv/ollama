@@ -768,7 +768,6 @@ func (llm *GGUFModel) Decode(rso *readSeekOffset) error {
 	for i := 0; uint64(i) < llm.NumTensor(); i++ {
 		name, err := llm.readString(rso)
 		if err != nil {
-			slog.Error(fmt.Sprintf("couldn't readString tensor", err))
 			return err
 		}
 
